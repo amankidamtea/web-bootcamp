@@ -1,34 +1,21 @@
 import SwiperComponent from '@/components/ui/swiper';
 import SwiperComponent2 from '@/components/ui/Swiper2';
-import { dashboard, login, register } from '@/routes';
-import { type SharedData } from '@/types';
-import { Head, Link, usePage } from '@inertiajs/react';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu';
-import { ChevronDownIcon, Mail, MapPin, Phone} from 'lucide-react';
+
+
+import { Head} from '@inertiajs/react';
+
 import React from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { SwiperSlide } from 'swiper/react';
-const dataNav1 = [
-    {
-        title: 'Jepang',
-        link: '#',
-        desk: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-    },
-    {
-        title: 'Korea',
-        link: '#',
-        desk: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-    },
-    {
-        title: 'Eropa',
-        link: '#',
-        desk: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-    },
-    {
-        title: 'Indonesia',
-        link: '#',
-        desk: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-    },
-];
+import Navbar from '@/components/ui/navbar';
+
+AOS.init({
+  duration: 800,
+  once: false,
+});
+
+
 
 const groupFoto1 = [
     {
@@ -203,12 +190,7 @@ const section4 = [
 ]
 
 
-export default function Welcome({
-    canRegister = true,
-}: {
-    canRegister?: boolean;
-}) {
-    const { auth } = usePage<SharedData>().props;
+export default function Welcome() {
     return (
         <>
             <Head title="Welcome">
@@ -219,127 +201,20 @@ export default function Welcome({
                 />
             </Head>
             <div className="flex min-h-screen flex-col items-center bg-white  text-[#1b1b18]  dark:bg-[#0a0a0a]">
-                <header className=" w-full bg-white fixed top-0 z-50  ">
-                    <div className="bg-[#2C3D6D] w-full  flex">
-                        <div className="flex gap-16  items-center justify-center w-full text-[12px]">
-                            <a href="" className='flex gap-2 items-center'>
-                                <Phone size={12} color={'white'} />
-                                <p className=' text-white'>+62 812 3456 7890</p>
-                            </a>
-                            <a href="" className='flex gap-2 items-center'>
-                                <MapPin size={12} color={'white'} />
-                                <p className=' text-white'>Kp Pasar Des.Sindagkerta</p>
-                            </a>
-                            <a href="" className='flex gap-2 items-center'>
-                                <Mail size={12} color={'white'} />
-                                <p className=' text-white'>Kp Pasar Des.Sindagkerta</p>
-                            </a>
-                        </div>
-                        <div className="flex gap-6 bg-[#BAF81B] items-center justify-center py-1 rounded-l-full w-[10%]">
-                            <a href="">
-                                <img src={'/images/icon/facebookIcon.png'} className='w-4' alt="" />
-                            </a>
-                            <a href="">
-                                <img src={'/images/icon/igIcon.png'} className='w-4' alt="" />
-                            </a>
-                            <a href="">
-                                <img src={'/images/icon/xIcon.png'} className='w-4' alt="" />
-                            </a>
-                        </div>
-                    </div>
-
-                    <nav className="flex items-center justify-between px-48 py-2">
-                        <img src={'/images/harada.png'} className='w-32' />
-                        <ul className='flex items-center gap-5 text-gray-500'>
-                            <li>
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger   className='outline-none flex items-center gap-1 cursor-pointer'>Program <ChevronDownIcon size={15}/></DropdownMenuTrigger>
-                                    <DropdownMenuContent  className='bg-white shadow p-5 lg:w-[700px] rounded-3xl mt-3'>
-                                        <div className="grid grid-cols-3 gap-7">
-                                            {dataNav1.map((item, index) => (
-                                                <DropdownMenuItem key={index} className='hover:text-blue-300 font-bold cursor-pointer outline-none'>
-                                                    <h2>{item.title}</h2>
-                                                    <p className='font-light  max-w-[200px] mt-2 text-[12px] text-gray-500'>{item.desk}</p>
-                                                </DropdownMenuItem>
-                                            ))}
-                                        </div>
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
-                            </li>
-                            <li>
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger   className=' outline-none flex items-center gap-1 cursor-pointer'>Corporate Service <ChevronDownIcon size={15}/></DropdownMenuTrigger>
-                                    <DropdownMenuContent  className='bg-white shadow p-5 lg:w-[700px] rounded-3xl '>
-                                        <div className="grid grid-cols-3 gap-7">
-                                            {dataNav1.map((item, index) => (
-                                                <DropdownMenuItem key={index} className='hover:text-blue-300 font-bold cursor-pointer outline-none'>
-                                                    <h2>{item.title}</h2>
-                                                    <p className='font-light  max-w-[200px] mt-2 text-[12px] text-gray-500'>{item.desk}</p>
-                                                </DropdownMenuItem>
-                                            ))}
-                                        </div>
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
-                            </li>
-                            <li>
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger   className=' outline-none flex items-center gap-1 cursor-pointer'>Community <ChevronDownIcon size={15}/></DropdownMenuTrigger>
-                                    <DropdownMenuContent  className='bg-white shadow p-5 lg:w-[700px] rounded-3xl '>
-                                        <div className="grid grid-cols-3 gap-7">
-                                            {dataNav1.map((item, index) => (
-                                                <DropdownMenuItem key={index} className='hover:text-blue-300 font-bold cursor-pointer outline-none'>
-                                                    <h2>{item.title}</h2>
-                                                    <p className='font-light  max-w-[200px] mt-2 text-[12px] text-gray-500'>{item.desk}</p>
-                                                </DropdownMenuItem>
-                                            ))}
-                                        </div>
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
-                            </li>
-                            <li>
-                                <a href="">Job Portal</a>
-                            </li>
-                        </ul>
-                        <>
-                            {auth.user ? (
-                                <Link
-                                    href={dashboard()}
-                                    className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
-                                >
-                                    Dashboard
-                                </Link>
-                            ) : (
-                                <div className='flex gap-2'>
-                                    <Link
-                                        href={login()}
-                                        className="inline-block bg-[#2C3D6D] rounded-full border border-transparent px-5 py-1.5 text-sm leading-normal text-white hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A] font-bold hover:text-gray-500"
-                                    >
-                                        Log in
-                                    </Link>
-                                    {canRegister && (
-                                        <Link
-                                            href={register()}
-                                            className=" hidden rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
-                                        >
-                                            Register
-                                        </Link>
-                                    )}
-                                </div>
-                            )}
-                        </>
-                    </nav>
+                <header className=" w-full relative">
+                    <Navbar/>
                 </header>
                 {/* <Hero /> */}
                 <main className='flex-1 w-full mt-17'>
                     {/* top */}
-                    <div className='bg-white w-full h-[700px] relative'>
-                        <div className="flex items-center  justify-around  w-full absolute pt-10">
-                            <div className=''>
-                                <h1 className='text-[60px] w-[500px] font-bold leading-[70px]'>Belajar dari awal, ditemenin sampe dapat kerja</h1>
-                                <p className='text-[20px] w-[500px]'>Bootcamp yang siap bimbing kamu dari awam sampai paham dengan metode belajar terlengkap, gratis mengulang kelas, dan penyaluran kerja bergaransi. </p>
-                                <button className='bg-[#2C3D6D] text-white px-10 rounded-full text-[25px] mt-5'>Join Now</button>
+                    <div className='bg-white w-full h-[700px] '>
+                        <div className="flex lg:flex-row flex-col gap-5 lg:px-32 lg:gap-0 items-center  justify-around  w-full  pt-10">
+                            <div className='lg:px-0 px-5 w-full'>
+                                <h1 className='lg:text-[60px] text-3xl lg:w-[500px] font-bold lg:leading-[70px]'><span className=''>Lembaga Bahasa No 1 di Indonesia</span> Tercepat Untuk Penempatan Kerja</h1>
+                                <p className='lg:text-[20px] lg:w-[500px] w-full'>Sebagai lembaga bahasa nomor satu di Indonesia, kami menyediakan pelatihan intensif dengan instruktur berpengalaman untuk hasil yang cepat dan efektif. Program kami dirancang untuk mempercepat penempatan kerja, sehingga lulusan siap bersaing di dunia profesional dalam waktu lebih singkat.</p>
+                                <button className='bg-[#2C3D6D] text-white px-10 rounded-full lg:text-[20px] text-[15px] py-1 mt-5'>Yuk Konsultasi</button>
                             </div>
-                            <div className='top-4 w-[600px] flex justify-center gap-3'>
+                            <div className='top-4   w-full px-5 lg:px-0 flex justify-center gap-3 overflow-hidden mt-6'>
                                 <SwiperComponent reverse={false} data={groupFoto1} direction='vertical' slidesPerView={2} spaceBetween={20} allowTouchMove={false}/>
                                 <SwiperComponent reverse={true} data={groupFoto2} direction='vertical' slidesPerView={2} spaceBetween={20} allowTouchMove={false}/>
                                 <SwiperComponent reverse={false} data={groupFoto3} direction='vertical' slidesPerView={2} spaceBetween={20} allowTouchMove={false} />
@@ -347,31 +222,29 @@ export default function Welcome({
                         </div>
                     </div>
                     {/* info */}
-                    <div className="flex justify-center w-full py-10  bg-[#2C3D6D]">
+                    <div className="flex justify-center w-full lg:py-10 py-5  bg-[#2C3D6D]">
                         <div className="flex gap-10 justify-around text-white">
-                            <div className="flex gap-3 items-center">
-                                <h3 className='text-[40px] font-bold text-[#BAF81B]'>1000+</h3>
-                                <p className='w-[60px]'>Digital Learnes</p>
+                            <div className="flex lg:flex-row flex-col gap-3 items-center">
+                                <h3 className='lg:text-[40px] text-xl font-bold text-[#BAF81B]'>1000+</h3>
+                                <p className='w-[60px] lg:text-[16px] text-[13px]'>Digital Learnes</p>
                             </div>
-                            <div className="flex gap-3 items-center">
-                                <h3 className='text-[40px] font-bold text-[#BAF81B]'>96%</h3>
-                                <p className='w-[80px]'>Students Got Hired </p>
+                            <div className="flex lg:flex-row flex-col gap-3 items-center">
+                                <h3 className='lg:text-[40px] text-xl font-bold text-[#BAF81B]'>96%</h3>
+                                <p className='w-[80px] lg:text-[16px] text-[13px]'>Students Got Hired </p>
                             </div>
-                            <div className="flex gap-3 items-center">
-                                <h3 className='text-[40px] font-bold text-[#BAF81B]'>600+</h3>
-                                <p className='w-[60px] '>Hiring Partners </p>
+                            <div className="flex lg:flex-row flex-col gap-3 items-center">
+                                <h3 className='lg:text-[40px] text-xl font-bold text-[#BAF81B]'>600+</h3>
+                                <p className='w-[60px] lg:text-[16px] text-[13px]'>Hiring Partners </p>
                             </div>
                         </div>
                     </div>
                     {/* section 1 */}
                     <div className='bg-[#2C3D6D] w-full h-fit  flex justify-center items-center relative'>
-                        <div className="bg-white w-full h-full rounded-t-[100px] px-48">
-                            <h2 className='text-center py-10 text-[30px] font-bold'>Berbeda dari yang Lain, Bootcamp Kami Sangat Terpercaya!</h2>
+                        <div className="bg-white w-full h-full lg:rounded-t-[100px] sm:px-10 md:px-10 lg:px-20 xl:px-32 2xl:px-48">
+                            <h2 data-aos="fade-up" className='text-center lg:py-10 py-5 lg:text-[30px] text-xl font-bold'>Berbeda dari yang Lain, Bootcamp Kami Sangat Terpercaya!</h2>
 
-                            
-                            <div className="grid grid-cols-2 gap-10 py-24 items-center">
-
-                                <div className="grid grid-cols-2 gap-10">
+                            <div className="grid lg:grid-cols-2 gap-10 2xl:py-24 py-5 items-center lg:text-[15px] text-[12px] px-10">
+                                <div data-aos="fade-up" className="grid grid-cols-2 lg:gap-10 gap-3">
                                     {section2.map((item, index) => (
                                         <div className="" key={index}>
                                             <h3 className='font-extrabold'>{item.title}</h3>
@@ -380,25 +253,25 @@ export default function Welcome({
                                     ))}
                                 </div>
 
-                                <div className="w-full flex justify-center h-fit">
+                                <div data-aos="fade-up" className="w-full lg:flex justify-center h-fit hidden">
                                     <img src="/images/foto2/section 1.png" className='w-[600px]' alt="" />
                                 </div>
                             </div>
                         </div>
                     </div>
                     {/* fartner */}
-                    <div className='bg-white w-full h-[400px] flex justify-center py-10'>
-                        <h2 className='text-[30px] w-[700px] text-center font-bold'><span className='text-[#2C3D6D]'>Harada Internasional Center</span> telah bekerja sama dengan 840+ Hiring Partners</h2>
+                    <div className='bg-white w-full h-[400px] flex justify-center lg:py-10 py-5'>
+                        <h2 data-aos="flip-up" className='lg:text-[30px] text-xl w-[700px] text-center font-bold'><span className='text-[#2C3D6D]'>Harada Internasional Center</span> telah bekerja sama dengan 840+ Hiring Partners</h2>
                     </div>
                     {/* section 2 */}
-                    <div className='bg-gray-500 w-full h-[500px] flex justify-center items-center overflow-hidden relative'>
-                        <img src="/images/foto2/bg1.png" className='h-[600px]' alt="" />
-                        <div className="absolute flex-col w-full flex justify-center items-center top0 right-0">
-                            <h3 className='text-[30px] font-bold text-[#2C3D6D]'> Mulai Belajar Skill Baru, dari Awam sampai Paham!</h3>
-                            <div className="flex gap-10 w-full justify-center py-3 mt-6">
+                    <div className='bg-white w-full lg:h-[500px] h-fit flex justify-center items-center overflow-hidden lg:relative pb-5'>
+                        <img src="/images/foto2/bg1.png" className='lg:h-[600px] hidden lg:block' alt="" />
+                        <div className="lg:absolute flex-col w-full flex justify-center items-center top0 right-0">
+                            <h3 data-aos="zoom-in" className='lg:text-[30px] text-xl text-center font-bold text-[#2C3D6D]'> Mulai Belajar Skill Baru, dari Awam sampai Paham!</h3>
+                            <div className="flex lg:flex-row flex-col gap-10 w-full justify-center items-center py-3 mt-6">
                                 {/* satu */}
                                 {section3.map((item, index) => (
-                                    <a key={index} href={item.link} className="w-fit bg-white p-3 shadow-md rounded-2xl">
+                                    <a data-aos="zoom-in" key={index} href={item.link} className="w-fit bg-white p-3 shadow-md rounded-2xl">
                                         <div className="w-[200px] h-[300px] overflow-hidden rounded-2xl relative">
                                             <img src={item.image} alt="" />
                                             <div className="bg-gradient-to-t from-[#2C3D6D] to-transparent absolute top-0 left-0 w-full h-full flex justify-center items-end">
@@ -411,24 +284,24 @@ export default function Welcome({
                         </div>
                     </div>
                     {/* section 3 */}
-                    <div className='bg-[#2C3D6D] w-full h-[700px] flex justify-center items-center'>
-                        <div className="bg-[#BAF81B] w-[70%] h-fit px-20 py-10 rounded-2xl relative">
-                            <div className="">
-                                <h2 className='w-[70%] font-bold text-[30px] mb-5'>Dari Rekrutmen Sampai Pelatihan, Semua Ada di Corporate Service Harada Internasional Center</h2>
-                                <p className='w-[60%] mb-7'>Tingkatkan efisiensi dan produktivitas perusahaan lewat layanan rekrutmen talenta dari level junior sampai senior, program pelatihan end-to-end yang bisa dikustomisasi sesuai kebutuhan, dan platform LMS yang bikin manajemen SDM kamu lebih praktis!</p>
-                                <a href="" className='bg-[#2C3D6D]  text-white px-5 py-2 rounded-full'>
+                    <div className='bg-[#2C3D6D] w-full lg:h-[700px] py-5 flex justify-center items-center px-5'>
+                        <div className="bg-[#BAF81B] lg:w-[70%] w-full h-fit lg:px-20 px-5 py-10 rounded-2xl relative">
+                            <div className="flex lg:block  flex-col justify-center items-center">
+                                <h2 data-aos="zoom-in-up" className='lg:w-[70%] w-full font-bold lg:text-[30px] text-xl mb-5'>Dari Rekrutmen Sampai Pelatihan, Semua Ada di Corporate Service Harada Internasional Center</h2>
+                                <p data-aos="zoom-in" className='lg:w-[60%] w-full mb-7'>Tingkatkan efisiensi dan produktivitas perusahaan lewat layanan rekrutmen talenta dari level junior sampai senior, program pelatihan end-to-end yang bisa dikustomisasi sesuai kebutuhan, dan platform LMS yang bikin manajemen SDM kamu lebih praktis!</p>
+                                <a data-aos="zoom-in" href="" className='bg-[#2C3D6D]  text-white px-5 py-2 rounded-full'>
                                     Pelajari Selengkapnya
                                 </a>
                             </div>
-                            <img src="/images/foto2/telent1.png" className='absolute bottom-0 right-0 w-[30%]' alt="" />
+                            <img src="/images/foto2/telent3.png" className='absolute hidden lg:block bottom-0 right-0 w-[30%]' alt="" />
                         </div>
                     </div>
                     {/* section 4 */}
                     <div className='bg-white w-full h-fit flex flex-col justify-center items-center py-20'>
-                        <h2 className='text-[30px] font-bold text-center'>Cerita Para Alumni <span className='text-[#2C3D6D]'>Harada Internasional Center</span></h2>
+                        <h2 data-aos="flip-up" className='text-[30px] font-bold text-center'>Cerita Para Alumni <span className='text-[#2C3D6D]'>Harada Internasional Center</span></h2>
                         {/* card */}
                         
-                        <div className="max-w-full mt-5">
+                        <div  className="max-w-full mt-5">
                             <SwiperComponent2  
                                     reverse={false}
                                     direction="horizontal"
@@ -438,17 +311,17 @@ export default function Welcome({
                                     >
                                     {section4.map((item, index) => (
                                         <SwiperSlide key={index}>
-                                        <div className=" bg-[#2C3D6D] px-20 w-[800px] h-[200px] rounded-2xl mt-5 flex  items-center gap-5">
+                                        <div className=" bg-[#2C3D6D] lg:px-20 px-3 lg:w-[600px] 2xl:w-[800px] lg:h-[200px] h-[300px] rounded-2xl mt-5 flex lg:flex-row flex-col items-center gap-5 py-5">
                                             <div className="p-1 rounded-full bg-white w-fit h-fit">
                                                 <div className="bg-white w-20 h-20 rounded-full flex justify-center items-center overflow-hidden">
                                                     <img src={item.image} className='w-20' alt="" />
                                                 </div>
                                             </div>
                                             <div className="text-white">
-                                            <h3 className='font-bold'>{item.name}</h3>
-                                            <p className='text-[12px] w-full mt-2 h-[90px] overflow-auto italic'>
-                                                "{item.deskripsi}"
-                                            </p>
+                                                <h3 className='font-bold'>{item.name}</h3>
+                                                <p className='text-[12px]  lg:text-[15px] w-full mt-2 h-[90px] overflow-auto italic'>
+                                                    "{item.deskripsi}"
+                                                </p>
                                             </div>
                                         </div>
                                         </SwiperSlide>
@@ -461,21 +334,22 @@ export default function Welcome({
                     </div>
                     {/* section 5 */}
                     <div className='bg-white w-full h-[500px] flex justify-center '>
-                        <h1 className='text-[30px] font-bold text-center'>Penghargaan <br/> <span className='text-[#2C3D6D]'>Harada Internasional Center</span></h1>
+                        <h1 data-aos="zoom-in" className='text-[30px] font-bold text-center'>Penghargaan <br/> <span className='text-[#2C3D6D]'>Harada Internasional Center</span></h1>
                     </div>
                     {/* section6 */}
-                    <div className='bg-[#BAF81B] w-full h-fit pt-20 flex justify-center items-center'>
-                        <div className="text-white bg-[#2C3D6D] p-10 rounded-2xl">
+                    <div  className='bg-[#BAF81B] w-full h-fit px-5 lg:py-0 lg:pt-10 py-5 flex justify-center items-center'>
+                        <div data-aos="zoom-in-left" className="text-white bg-[#2C3D6D] p-10 rounded-2xl">
                             <h2 className='text-[30px] font-bold '>Konsultasikan Program <span className='text-[#BAF81B]'>Belajar Secara GRATIS!</span></h2>
-                            <p className='mb-6'>Tanyakan sekarang, dapatkan jawabannya langsung dengan menghubungi Tim Admission kami. </p>
+                            <p className='mb-6 w-[500px]'>Tanyakan sekarang, dapatkan jawabannya langsung dengan menghubungi Tim Admission kami. </p>
                             <a href="" className='bg-[#BAF81B] text-[#2C3D6D] px-5 py-2 rounded-full'>Hubungi Kami</a>
                         </div>
-                        <img src="/images/foto2/telent2.png" className='w-96' alt="" />
+                        <img src="/images/foto2/telent2.png" className='w-96 lg:block hidden' alt="" />
                     </div>
                     {/* sidebar */}
                     <div className='bg-[#2C3D6D] w-full h-fit pt-16 flex justify-center items-start text-white gap-10'>
                         <div className="">
-                            <h2 className='font-bold mb-5 text-[#BAF81B]'>PT. Harada Internasional Center</h2>
+                            <img src="/images/logowhite.png" className='w-28' alt="" />
+                            <h2 className='font-bold my-5'>PT. Harada Internasional Center</h2>
                             <p className='leading-[26px]'>
                                 Plaza CityView <br/>Jl. Kemang Timur No.1, RT.14/RW.8, Pejaten Barat,<br/> Ps. Minggu, Kota Jakarta Selatan, <br/>Daerah Khusus Ibukota Jakarta 12510
                             </p>
@@ -543,7 +417,7 @@ export default function Welcome({
                     </div>
                 </main>
                 <footer className="bg-[#2C3D6D] text-white p-4 text-center w-full">
-                    © 2025 Semua Hak Dilindungi
+                    Copyright © 2025. PT Harada Internasional Center
                 </footer>
             </div>
         </>
