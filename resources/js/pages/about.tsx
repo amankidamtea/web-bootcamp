@@ -1,150 +1,42 @@
-import SwiperComponent from '@/components/ui/swiper';
+
 // import SwiperComponent2 from '@/components/ui/Swiper2';
-import { dashboard, login, register } from '@/routes';
-import { type SharedData } from '@/types';
-import { Head, Link, usePage } from '@inertiajs/react';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu';
-import { ChevronDownIcon, Mail, MapPin, Phone} from 'lucide-react';
+
+
+import { Head} from '@inertiajs/react';
+
 import React from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 // import { SwiperSlide } from 'swiper/react';
-const dataNav1 = [
-    {
-        title: 'Jepang',
-        link: '#',
-        desk: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-    },
-    {
-        title: 'Korea',
-        link: '#',
-        desk: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-    },
-    {
-        title: 'Eropa',
-        link: '#',
-        desk: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-    },
-    {
-        title: 'Indonesia',
-        link: '#',
-        desk: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
-    },
-];
+// import Navbar from '@/components/ui/navbar';
+import MainLayout from './mainLayout';
 
-const groupFoto1 = [
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard2.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard3.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard4.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard5.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard6.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard7.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard8.jpg",
-        "deskripsi": ""
-    },
-];
+AOS.init({
+  duration: 800,
+  once: false,
+});
 
-const groupFoto2 = [
+const dataFounder = [
     {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard9.jpg",
-        "deskripsi": ""
+        "name": "Purnama",
+        "image": "/images/foto2/ceo.png",
+        "jabatan": "Mentor Bahasa Arab",
+        "deskripsi": "Saat ini sedang bekerja menjadi menjadi Mentor bahasa Arab, Instruksi tur kehutanan di Harada International Center. Memiliki pengalaman mengajar 10 Tahun di dunia pendidikan, dan 5 Tahun di Industri Kehutanan ( Djarum Forestry) di Kalimantan timur. Juga aktif sebagai Trainer Nasional Psykorehab ( Bersanad Syaikh Timur Tengah) Yang menunjang pembelajaran bahasa Arab. Selain Pengalaman yang mempuni di bidang pendidikan, juga cara belajar yang Interaktif dan menyenangkan sehingga memudahkan dalam proses transfer ilmu pengetahuan kepada SISWA"
     },
     {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard10.jpg",
-        "deskripsi": ""
+        "name": "Yanti",
+        "image": "/images/foto2/rima.png",
+        "jabatan": "Mentor Bahasa Jepang",
+        "deskripsi": "Saat ini sedang bekerja menjadi instruktur bahasa Jepang di Harada International Center. Memiliki pengalaman mengajar 5 bulan yang didukung oleh pengalaman kerja langsung di Jepang selama 5 tahun di bidang Quality Control (QC). Mengintegrasikan pemahaman budaya dan bahasa bisnis Jepang yang otentik ke dalam materi pengajaran untuk hasil yang praktis dan aplikatif."
     },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard11.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard12.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard13.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard14.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard15.jpg",
-        "deskripsi": ""
-    },
-];
-
-const groupFoto3 = [
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard16.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard17.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard18.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard19.jpg",
-        "deskripsi": ""
-    },
-    {
-        "name": "Safitri",
-        "image": "/images/foto2/Artboard20.jpg",
-        "deskripsi": ""
-    },
-];
+]
 
 
 
-export default function About({
-    canRegister = true,
-}: {
-    canRegister?: boolean;
-}) {
-    const { auth } = usePage<SharedData>().props;
+export default function About() {
     return (
         <>
-            <Head title="Welcome">
+            <Head title="Berkarir Lebih Cepat dengan Harada Internasional Center">
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link
                     href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600"
@@ -152,236 +44,97 @@ export default function About({
                 />
             </Head>
             <div className="flex min-h-screen flex-col items-center bg-white  text-[#1b1b18]  dark:bg-[#0a0a0a]">
-                <header className=" w-full bg-white fixed top-0 z-50  ">
-                    <div className="bg-[#2C3D6D] w-full  flex">
-                        <div className="flex gap-16  items-center justify-center w-full text-[12px]">
-                            <a href="" className='flex gap-2 items-center'>
-                                <Phone size={12} color={'white'} />
-                                <p className=' text-white'>+62 812 3456 7890</p>
-                            </a>
-                            <a href="" className='flex gap-2 items-center'>
-                                <MapPin size={12} color={'white'} />
-                                <p className=' text-white'>Kp Pasar Des.Sindagkerta</p>
-                            </a>
-                            <a href="" className='flex gap-2 items-center'>
-                                <Mail size={12} color={'white'} />
-                                <p className=' text-white'>Kp Pasar Des.Sindagkerta</p>
-                            </a>
-                        </div>
-                        <div className="flex gap-6 bg-[#BAF81B] items-center justify-center py-1  w-[10%]" style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 5% 100%)' }}>
-                            <a href="">
-                                <img src={'/images/icon/facebookIcon.png'} className='w-4' alt="" />
-                            </a>
-                            <a href="">
-                                <img src={'/images/icon/igIcon.png'} className='w-4' alt="" />
-                            </a>
-                            <a href="">
-                                <img src={'/images/icon/xIcon.png'} className='w-4' alt="" />
-                            </a>
-                        </div>
-                    </div>
 
-                    <nav className="flex items-center justify-between px-48 py-2">
-                        <a href="/">
-                            <img src={'/images/harada.png'} className='w-32' />
-                        </a>
-                        <ul className='flex items-center gap-5 text-gray-500'>
-                            <li>
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger   className='outline-none flex items-center gap-1 cursor-pointer'>Program <ChevronDownIcon size={15}/></DropdownMenuTrigger>
-                                    <DropdownMenuContent  className='bg-white shadow p-5 lg:w-[700px] rounded-3xl mt-3'>
-                                        <div className="grid grid-cols-3 gap-7">
-                                            {dataNav1.map((item, index) => (
-                                                <DropdownMenuItem key={index} className='hover:text-blue-300 font-bold cursor-pointer outline-none'>
-                                                    <h2>{item.title}</h2>
-                                                    <p className='font-light  max-w-[200px] mt-2 text-[12px] text-gray-500'>{item.desk}</p>
-                                                </DropdownMenuItem>
-                                            ))}
-                                        </div>
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
-                            </li>
-                            <li>
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger   className=' outline-none flex items-center gap-1 cursor-pointer'>Corporate Service <ChevronDownIcon size={15}/></DropdownMenuTrigger>
-                                    <DropdownMenuContent  className='bg-white shadow p-5 lg:w-[700px] rounded-3xl '>
-                                        <div className="grid grid-cols-3 gap-7">
-                                            {dataNav1.map((item, index) => (
-                                                <DropdownMenuItem key={index} className='hover:text-blue-300 font-bold cursor-pointer outline-none'>
-                                                    <h2>{item.title}</h2>
-                                                    <p className='font-light  max-w-[200px] mt-2 text-[12px] text-gray-500'>{item.desk}</p>
-                                                </DropdownMenuItem>
-                                            ))}
-                                        </div>
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
-                            </li>
-                            <li>
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger   className=' outline-none flex items-center gap-1 cursor-pointer'>Community <ChevronDownIcon size={15}/></DropdownMenuTrigger>
-                                    <DropdownMenuContent  className='bg-white shadow p-5 lg:w-[700px] rounded-3xl '>
-                                        <div className="grid grid-cols-3 gap-7">
-                                            {dataNav1.map((item, index) => (
-                                                <DropdownMenuItem key={index} className='hover:text-blue-300 font-bold cursor-pointer outline-none'>
-                                                    <h2>{item.title}</h2>
-                                                    <p className='font-light  max-w-[200px] mt-2 text-[12px] text-gray-500'>{item.desk}</p>
-                                                </DropdownMenuItem>
-                                            ))}
-                                        </div>
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
-                            </li>
-                            <li>
-                                <a href="">Job Portal</a>
-                            </li>
-                        </ul>
-                        <>
-                            {auth.user ? (
-                                <Link
-                                    href={dashboard()}
-                                    className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
-                                >
-                                    Dashboard
-                                </Link>
-                            ) : (
-                                <div className='flex gap-2'>
-                                    <Link
-                                        href={login()}
-                                        className="inline-block bg-[#2C3D6D] rounded-full border border-transparent px-5 py-1.5 text-sm leading-normal text-white hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A] font-bold hover:text-gray-500"
-                                    >
-                                        Log in
-                                    </Link>
-                                    {canRegister && (
-                                        <Link
-                                            href={register()}
-                                            className=" hidden rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
-                                        >
-                                            Register
-                                        </Link>
-                                    )}
-                                </div>
-                            )}
-                        </>
-                    </nav>
-                </header>
                 {/* <Hero /> */}
-                <main className='flex-1 w-full mt-17'>
                     {/* top */}
-                    <div className='bg-white w-full h-[700px] relative'>
-                        <div className="flex items-center  justify-around  w-full absolute pt-10">
-                            <div className=''>
-                                <h1 className='text-[60px] w-[500px] font-bold leading-[70px]'>Mimpi Besar <br/> <span className='bg-[#BAF81B]'>Harada Internasional Center</span></h1>
-                                <p className='text-[20px] w-[500px] mt-5'>Platform pembelajaran dan persiapan karier yang telah berdiri lebih dari empat tahun. Sejak awal, dibimbing.id berfokus mendukung pemilik growth mindset untuk mengembangkan diri dan meraih karier impian. </p>
+                    <div className='bg-white w-full h-fit lg:mb-4 mb-5'>
+                        <div className="flex lg:flex-row flex-col gap-5 lg:px-32 lg:gap-0 items-center  justify-around  w-full  pt-20">
+                            <div className='lg:px-0 px-5 w-full'>
+                                <h1 className='lg:text-[60px] text-3xl lg:w-[500px] font-bold lg:leading-[70px] text-[#2C3D6D]'>Tentang Harada Internasional Center</h1>
+                                <p className='lg:text-[20px] lg:w-[500px] w-full'>Harada Internasional Center merupakan pusat pembelajaran dan persiapan karier berbasis teknologi. Sejak didirikan, Harada Internasional Center berkomitmen mendukung individu dengan growth mindset untuk mengembangkan potensi diri dan mencapai karier yang mereka impikan.</p>
                             </div>
-                            <div className='top-4 w-[600px] flex justify-center gap-3'>
-                                <SwiperComponent reverse={false} data={groupFoto1} direction='vertical' slidesPerView={2} spaceBetween={20} allowTouchMove={false}/>
-                                <SwiperComponent reverse={true} data={groupFoto2} direction='vertical' slidesPerView={2} spaceBetween={20} allowTouchMove={false}/>
-                                <SwiperComponent reverse={false} data={groupFoto3} direction='vertical' slidesPerView={2} spaceBetween={20} allowTouchMove={false} />
+                            <div className='top-4   w-full px-5 lg:px-0 flex justify-center gap-3 relative overflow-hidden mt-6'>
+                                <img src="/images/foto2/telentb1.png" className='w-[300px]' alt="" />
+                                <div className="flex flex-col w-full h-full absolute  top-0 left-0 justify-between px-3">
+                                    <div className="flex flex-col bg-[#BAF81B] p-2 rounded-xl w-fit ml-auto">
+                                        <span className='text-[#2C3D6D] font-bold text-2xl w-fit'>100+</span>
+                                        Hiring Partner
+                                    </div>
+                                    <div className="flex flex-col bg-[#BAF81B] p-2 rounded-xl w-fit">
+                                        <span className='text-[#2C3D6D] font-bold text-2xl'>20+</span>
+                                        Pengajar & mentor <br/> Profesional
+                                    </div>
+                                    <div className="flex flex-col bg-[#BAF81B] p-2 rounded-xl w-fit ml-auto mb-10">
+                                        <span className='text-[#2C3D6D] font-bold text-2xl'>200+</span>
+                                        Education Agent
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    {/* info */}
-                    <div className="flex justify-center w-full py-20  bg-[#2C3D6D] rounded-t-[80px]">
-                        <div className="flex  gap-10 justify-around text-white">
-                            <div className="flex gap-3 items-center flex-col w-[700px] text-center">
-                                <h3 className='text-[40px] font-bold text-[#BAF81B]'>Tentang Kami</h3>
-                                <p>Dibimbing berdiri sebagai platform pelatihan karier digital.</p>
+                    {/* visi misi */}
+                    <div className="flex justify-center w-full lg:py-10 py-5  bg-[#2C3D6D]">
+                        <div className="grid grid-cols-2 gap-5 w-full text-white py-5 px-40">
+                            <div data-aos="fade-right" className="flex  flex-col gap-3 items-center">
+                                <h3 className='lg:text-[40px] text-xl font-bold text-[#BAF81B]'>Visi</h3>
+                                <p className='w-full lg:text-[16px] text-[13px] italic'>
+                                " Menjadi lembaga bahasa dan pengembangan sumber daya manusia nomor 1 di Indonesia, tercepat dalam penempatan kerja, yang unggul, berdaya saing global, serta berlandaskan nilai keimanan dan akhlak mulia, dalam mencetak generasi muda Indonesia yang mandiri, profesional, dan berkontribusi bagi umat, bangsa, dan negara. "
+                                </p>
+                            </div>
+                            <div data-aos="fade-left" className="flex flex-col gap-3 items-center">
+                                <h3 className='lg:text-[40px] text-xl font-bold text-[#BAF81B]'>Misi</h3>
+                                <div className='w-full flex flex-col gap-3 lg:text-[16px] text-[13px] italic'>
                                 <p>
-                                    Kami dipercaya investor untuk mengembangkan layanan lebih luas. Dengan dana ini, kami meningkatkan kualitas mentor, memperluas topik bootcamp, dan mulai membangun sistem manajemen pembelajaran berbasis data.
+                                    Menyelenggarakan pendidikan bahasa berkualitas (Inggris, Jepang, Korea, Arab, dan bahasa internasional lainnya) yang profesional, terstruktur, serta berlandaskan nilai-nilai keimanan dan etika.
                                 </p>
                                 <p>
-                                    Dukungan berkelanjutan ini jadi validasi bahwa pendekatan kami berhasil. Kami fokus membangun ekosistem pembelajaran end
+                                    Membina karakter peserta didik yang berakhlak mulia, disiplin, jujur, bertanggung jawab, dan bermental tangguh dalam menghadapi tantangan global.
                                 </p>
                                 <p>
-                                    Kami sadar bahwa tantangan utama anak muda Indonesia hari ini bukan sekadar akses belajar, tapi bagaimana mereka bisa mendapatkan pekerjaan yang relevan dan berdaya saing. dibimbing.id hadir untuk menjawab tantangan itu. Kami tidak hanya fokus pada penguasaan skill, tapi juga memastikan peserta punya pengalaman belajar yang didampingi mentor, disiapkan dengan career preparation services, dan terhubung langsung dengan industri melalui program penyaluran kerja.
-                                    Harapan saya sederhana: setiap orang yang belajar di dibimbing.id bisa naik kelas, bukan cuma secara skill, tapi juga kualitas hidup.
+                                    Memberdayakan pemuda-pemudi daerah agar mandiri secara ekonomi dan sosial sebagai bentuk pengabdian kepada Allah SWT serta kontribusi nyata bagi keluarga dan masyarakat.
                                 </p>
+                                <p>
+                                    Menjadi lembaga nomor 1 di Indonesia yang tercepat dalam penempatan kerja melalui sistem pelatihan terarah, pendampingan intensif, dan jejaring kerja nasional serta internasional yang kuat.
+                                </p>
+                                <p>
+                                    Membuka akses peluang kerja dan jejaring internasional secara profesional, amanah, dan transparan.
+                                </p>
+                                <p>
+                                    Menanamkan budaya kerja yang islami dan beretika, menjunjung tinggi kejujuran, integritas, dan kepedulian sosial dalam setiap aktivitas lembaga.
+                                </p>
+                                <p>
+                                    Mengintegrasikan peran pendidik, praktisi, dan pembimbing spiritual dalam membentuk lulusan yang siap kerja, berjiwa pemimpin, dan berorientasi pada kemaslahatan umat.
+                                </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-center w-full py-5  bg-[#BAF81B] ">
-                        
-                    </div>
-                    {/* sidebar */}
-                    <div className='bg-[#2C3D6D] w-full h-fit pt-16 flex justify-center items-start text-white gap-10'>
-                        <div className="">
-                            <img src="/images/logowhite.png" className='w-28' alt="" />
-                            <h2 className='font-bold my-5'>PT. Harada Internasional Center</h2>
-                            <p className='leading-[26px]'>
-                                Plaza CityView <br/>Jl. Kemang Timur No.1, RT.14/RW.8, Pejaten Barat,<br/> Ps. Minggu, Kota Jakarta Selatan, <br/>Daerah Khusus Ibukota Jakarta 12510
-                            </p>
-                        </div>
-                        <div className="">
-                            <h2 className='font-bold mb-5 text-[#BAF81B]'>Layanan Karier </h2>
-                            <div className="flex flex-col gap-5">
-                                <a href=''>
-                                Video Course Online
-                                </a>
-                                <a href=''>
-                                    Bootcamp
-                                </a>
-                                <a href=''>
-                                    Webinar Gratis
-                                </a>
-                            </div>
-                        </div>
-                        <div className="">
-                            <h2 className='font-bold mb-5 text-[#BAF81B]'>Pages</h2>
-                            <div className="flex flex-col gap-5">
-                                <a href=''>
-                                    Beranda
-                                </a>
-                                <a href=''>
-                                    Tentang Kami
-                                </a>
-                                <a href=''>
-                                    Mentor
-                                </a>
-                                <a href=''>
-                                    Blog
-                                </a>
-                                <a href=''>
-                                    Afiliasi
-                                </a>
-                                <a href=''>
-                                    Job Portal
-                                </a>
-                                <a href=''>
-                                    Karir
-                                </a>
-                                <a href=''>
-                                    Kebijakan Privasi
-                                </a>
-                            </div>
-                        </div>
-                        <div className="">
-                            <h2 className='font-bold mb-5 text-[#BAF81B]'>Layanan Perusahaan </h2>
-                            <div className="flex flex-col gap-5">
-                                <a href=''>
-                                    Digital Skill Training
-                                </a>
-                                <a href=''>
-                                    Soft Skill Training
-                                </a>
-                                <a href=''>
-                                    BNSP
-                                </a>
+                    {/* section 1 */}
+                    <div className='bg-[#2C3D6D] w-full h-fit  flex justify-center items-center relative'>
+                        <div className="bg-white w-full h-full lg:rounded-t-[100px] sm:px-10 md:px-10 lg:px-20 xl:px-32 2xl:px-48">
+                            <h2 data-aos="fade-up" className='text-center text-[#2C3D6D] lg:py-10 py-5 lg:text-[30px] text-xl font-bold'>Beberapa Sosok Hebat dibalik <br/> Harada Internasional Center</h2>
+
+                            <div className="">
+                                <div  className="w-full flex-flex-col gap-5 py-10">
+                                    {dataFounder.map((item, index) => (
+                                        <div className={ index % 2 === 0 ? "flex-row-reverse flex mt-7" : "flex flex-row mt-7"} key={index}>
+                                            <div data-aos="fade-up" className="w-full  h-fit">
+                                                <h3 className='font-extrabold text-[#2C3D6D]'>{item.name}</h3>
+                                                <h4>{item.jabatan}</h4>
+                                                <p className='mt-3 text-gray-500 w-[70%]'>{item.deskripsi}</p>
+                                            </div>
+                                            <div data-aos="fade-up" className="w-full lg:flex justify-center h-fit hidden">
+                                                <img src={item.image} className='w-[300px]' alt="" />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className='bg-[#2C3D6D] w-full h-fit pt-10 flex flex-col justify-center items-center text-white '>
-                        <h3>Metode pembayaran:</h3>
-                        <div className="mt-5">
-                            <div className="bg-white text-black px-3 py-1 rounded-full">
-                                BCA
-                            </div>
-                        </div>
-                    </div>
-                </main>
-                <footer className="bg-[#2C3D6D] text-white p-4 text-center w-full">
-                    Copyright © 2025. PT Harada Internasional Center
-                </footer>
             </div>
         </>
     );
 }
+
+About.layout = (page: React.ReactNode) => <MainLayout>{page}</MainLayout>;

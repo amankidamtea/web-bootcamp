@@ -16,6 +16,36 @@ Route::get('/about', function () {
     ]);
 })->name('about');
 
+Route::get('/job-portal', function () {
+    return Inertia::render('jobportal', [
+        'canRegister' => Features::enabled(Features::registration()),
+    ]);
+})->name('jobportal');
+
+Route::get('/jepang', function () {
+    return Inertia::render('jepang', [
+        'canRegister' => Features::enabled(Features::registration()),
+    ]);
+})->name('jepang');
+
+Route::get('/korea', function () {
+    return Inertia::render('korea', [
+        'canRegister' => Features::enabled(Features::registration()),
+    ]);
+})->name('korea');
+
+Route::get('/eropa', function () {
+    return Inertia::render('eropa', [
+        'canRegister' => Features::enabled(Features::registration()),
+    ]);
+})->name('eropa');
+
+Route::get('/indonesia', function () {
+    return Inertia::render('indonesia', [
+        'canRegister' => Features::enabled(Features::registration()),
+    ]);
+})->name('indonesia');
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard');

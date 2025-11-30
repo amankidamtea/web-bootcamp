@@ -40,26 +40,26 @@ export default function Navbar({
                 <div className="flex gap-16  items-center justify-center w-full text-[12px]">
                     <a href="" className='flex gap-2 items-center'>
                         <Phone size={12} color={'white'} />
-                        <p className=' text-white'>+62 812 3456 7890</p>
+                        <p className=' text-white'>+62 8782 3529 583</p>
                     </a>
                     <a href="" className='flex gap-2 items-center'>
                         <MapPin size={12} color={'white'} />
-                        <p className=' text-white'>Kp Pasar Des.Sindagkerta</p>
+                        <p className=' text-white'>Kp. Langensari RT/ RW 005/005 Sukanagara Cianjur</p>
                     </a>
                     <a href="" className='flex gap-2 items-center'>
                         <Mail size={12} color={'white'} />
-                        <p className=' text-white'>Kp Pasar Des.Sindagkerta</p>
+                        <p className=' text-white'>haradainternasionalcenter@gmail.com</p>
                     </a>
                 </div>
                 <div className="flex gap-6 bg-[#BAF81B] items-center justify-center py-1  w-[10%]" style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 5% 100%)' }}>
-                    <a href="">
-                        <img src={'/images/icon/facebookIcon.png'} className='w-4' alt="" />
+                    <a href="https://www.tiktok.com/@haradaforeveryone?is_from_webapp=1&sender_device=pc">
+                        <img src={'/images/icon/tiktoka.png'} className='w-4' alt="" />
                     </a>
-                    <a href="">
-                        <img src={'/images/icon/igIcon.png'} className='w-4' alt="" />
+                    <a href="https://www.instagram.com/haradainternasionalcenter/">
+                        <img src={'/images/icon/iga.png'} className='w-4' alt="" />
                     </a>
-                    <a href="">
-                        <img src={'/images/icon/xIcon.png'} className='w-4' alt="" />
+                    <a href="https://www.youtube.com/@haradainternasionalcenter">
+                        <img src={'/images/icon/yta.png'} className='w-4' alt="" />
                     </a>
                 </div>
             </div>
@@ -76,7 +76,7 @@ export default function Navbar({
                         <DropdownMenu>
                             <DropdownMenuTrigger   className='outline-none flex items-center gap-1 cursor-pointer'>Program <ChevronDownIcon size={15}/></DropdownMenuTrigger>
                             <DropdownMenuContent  className='bg-white shadow p-5 lg:w-[700px] rounded-3xl mt-3'>
-                                <div className="grid grid-cols-3 gap-7">
+                                <div className="grid lg:grid-cols-3 gap-7">
                                     {dataNav1.map((item, index) => (
                                         <DropdownMenuItem key={index} className='hover:text-blue-300 font-bold cursor-pointer outline-none'>
                                             <h2>{item.title}</h2>
@@ -90,7 +90,7 @@ export default function Navbar({
                     <li>
                         <DropdownMenu>
                             <DropdownMenuTrigger   className=' outline-none flex items-center gap-1 cursor-pointer'>Corporate Service <ChevronDownIcon size={15}/></DropdownMenuTrigger>
-                            <DropdownMenuContent  className='bg-white shadow p-5 lg:w-[700px] rounded-3xl '>
+                            <DropdownMenuContent  className='bg-white shadow p-5 lg:w-[700px] rounded-3xl mt-3'>
                                 <div className="grid lg:grid-cols-3 gap-7">
                                     {dataNav1.map((item, index) => (
                                         <DropdownMenuItem key={index} className='hover:text-blue-300 font-bold cursor-pointer outline-none'>
@@ -105,8 +105,8 @@ export default function Navbar({
                     <li>
                         <DropdownMenu>
                             <DropdownMenuTrigger   className=' outline-none flex items-center gap-1 cursor-pointer'>Community <ChevronDownIcon size={15}/></DropdownMenuTrigger>
-                            <DropdownMenuContent  className='bg-white shadow p-5 lg:w-[700px] rounded-3xl '>
-                                <div className="grid grid-cols-3 gap-7">
+                            <DropdownMenuContent  className='bg-white shadow p-5 lg:w-[700px] rounded-3xl mt-3'>
+                                <div className="grid lg:grid-cols-3 gap-7">
                                     {dataNav1.map((item, index) => (
                                         <DropdownMenuItem key={index} className='hover:text-blue-300 font-bold cursor-pointer outline-none'>
                                             <h2>{item.title}</h2>
@@ -118,7 +118,7 @@ export default function Navbar({
                         </DropdownMenu>
                     </li>
                     <li>
-                        <a href="">Job Portal</a>
+                        <a href="/job-portal">Job Portal</a>
                     </li>
                 </ul>
                 <div className='w-full lg:w-fit px-5 mt-3'>
