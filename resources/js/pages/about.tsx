@@ -18,13 +18,13 @@ AOS.init({
 
 const dataFounder = [
     {
-        "name": "Purnama",
+        "name": "Purnama Nuri Santana, SP",
         "image": "/images/foto2/ceo.png",
         "jabatan": "Mentor Bahasa Arab",
         "deskripsi": "Saat ini sedang bekerja menjadi menjadi Mentor bahasa Arab, Instruksi tur kehutanan di Harada International Center. Memiliki pengalaman mengajar 10 Tahun di dunia pendidikan, dan 5 Tahun di Industri Kehutanan ( Djarum Forestry) di Kalimantan timur. Juga aktif sebagai Trainer Nasional Psykorehab ( Bersanad Syaikh Timur Tengah) Yang menunjang pembelajaran bahasa Arab. Selain Pengalaman yang mempuni di bidang pendidikan, juga cara belajar yang Interaktif dan menyenangkan sehingga memudahkan dalam proses transfer ilmu pengetahuan kepada SISWA"
     },
     {
-        "name": "Yanti",
+        "name": "Rima Aura Salsabila",
         "image": "/images/foto2/rima.png",
         "jabatan": "Mentor Bahasa Jepang",
         "deskripsi": "Saat ini sedang bekerja menjadi instruktur bahasa Jepang di Harada International Center. Memiliki pengalaman mengajar 5 bulan yang didukung oleh pengalaman kerja langsung di Jepang selama 5 tahun di bidang Quality Control (QC). Mengintegrasikan pemahaman budaya dan bahasa bisnis Jepang yang otentik ke dalam materi pengajaran untuk hasil yang praktis dan aplikatif."
@@ -35,8 +35,8 @@ const dataFounder = [
 
 export default function About() {
     return (
-        <>
-            <Head title="Berkarir Lebih Cepat dengan Harada Internasional Center">
+        <div className='w-full overflow-x-hidden'>
+            <Head title="Tentang">
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link
                     href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600"
@@ -74,7 +74,7 @@ export default function About() {
                     </div>
                     {/* visi misi */}
                     <div className="flex justify-center w-full lg:py-10 py-5  bg-[#2C3D6D]">
-                        <div className="grid grid-cols-2 gap-5 w-full text-white py-5 px-40">
+                        <div className="grid lg:grid-cols-2 gap-5 w-full text-white py-5 lg:px-40 px-5">
                             <div data-aos="fade-right" className="flex  flex-col gap-3 items-center">
                                 <h3 className='lg:text-[40px] text-xl font-bold text-[#BAF81B]'>Visi</h3>
                                 <p className='w-full lg:text-[16px] text-[13px] italic'>
@@ -117,13 +117,13 @@ export default function About() {
                             <div className="">
                                 <div  className="w-full flex-flex-col gap-5 py-10">
                                     {dataFounder.map((item, index) => (
-                                        <div className={ index % 2 === 0 ? "flex-row-reverse flex mt-7" : "flex flex-row mt-7"} key={index}>
-                                            <div data-aos="fade-up" className="w-full  h-fit">
+                                        <div className={ index % 2 === 0 ? "lg:flex-row-reverse flex flex-col mt-7" : "flex lg:flex-row flex-col mt-7"} key={index}>
+                                            <div data-aos="fade-up" className="w-full  h-fit px-5">
                                                 <h3 className='font-extrabold text-[#2C3D6D]'>{item.name}</h3>
                                                 <h4>{item.jabatan}</h4>
-                                                <p className='mt-3 text-gray-500 w-[70%]'>{item.deskripsi}</p>
+                                                <p className='mt-3 text-gray-500 lg:w-[70%]'>{item.deskripsi}</p>
                                             </div>
-                                            <div data-aos="fade-up" className="w-full lg:flex justify-center h-fit hidden">
+                                            <div data-aos="fade-up" className="w-full flex justify-center h-fit ">
                                                 <img src={item.image} className='w-[300px]' alt="" />
                                             </div>
                                         </div>
@@ -133,7 +133,7 @@ export default function About() {
                         </div>
                     </div>
             </div>
-        </>
+        </div>
     );
 }
 

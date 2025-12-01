@@ -131,7 +131,7 @@ const jobList = [
 export default function JobPortal() {
     return (
         <>
-            <Head title="Berkarir Lebih Cepat dengan Harada Internasional Center">
+            <Head title="Job Portal">
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link
                     href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600"
@@ -143,7 +143,7 @@ export default function JobPortal() {
                 {/* <Hero /> */}
                     {/* top */}
                     <div className='bg-white w-full h-fit lg:mb-4 mb-5'>
-                        <div className="flex lg:flex-row flex-col bg-[#BAF81B]  rounded-b-[100px] gap-5 lg:px-32 lg:gap-0 items-center  justify-around  w-full  pt-20">
+                        <div className="flex lg:flex-row flex-col bg-[#BAF81B]  lg:rounded-b-[100px] rounded-b gap-5 lg:px-32 lg:gap-0 items-center  justify-around  w-full  pt-20">
                             <div className='lg:px-0 px-5 w-full'>
                                 <h1 className='lg:text-[60px] text-3xl lg:w-[500px] font-bold lg:leading-[70px] text-[#2C3D6D]'>Job Portal Harada Internasional Center</h1>
                                 <p className='lg:text-[20px] lg:w-[500px] w-full'>Job Portal Harada Internasional Center merupakan platform pencarian kerja yang dirancang untuk membantu talenta berbakat menemukan peluang karier terbaik.</p>
@@ -159,46 +159,48 @@ export default function JobPortal() {
                     </div>
                     {/* section 1 */}
                     <div className='bg-[#2C3D6D] w-full h-fit  flex justify-center items-center relative'>
-                        <div className="bg-gray-100 w-full h-full lg:rounded-t-[100px] sm:px-10 md:px-10 lg:px-20 xl:px-32 2xl:px-48">
-                            <div className="px-32 py-10">
+                        <div className="bg-gray-100 w-full h-full lg:rounded-t-[100px] px-5  lg:px-20  ">
+                            <div className="lg:px-32 py-10">
                                 {jobList.map((job, index) => (
                                     <div key={index} className="bg-white shadow p-5 rounded-2xl mt-5">
-                                        <div className="bg-[#2C3D6D] text-white p-5 rounded-2xl">
+                                        <div className="bg-[#2C3D6D] text-white p-5 rounded-2xl mb-5">
                                             <h1 className='font-bold text-xl text-[#BAF81B]'>{job.title}</h1>
                                             <h2 className='text-gray-200'>{job.company}</h2>
                                             <p className='text-gray-400'>{job.createdAt}</p>
                                         </div>
-                                        <div className="mt-3">
-                                            <p className="font-bold">Tanggung Jawab:</p>
-                                            <ul className="list-disc pl-5 space-y-2">
-                                                {job.responsibilities.map((item, j) => (
-                                                <li key={j}>{item}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <div className="mt-3">
-                                            <p className="font-bold">Tanggung Jawab:</p>
-                                            <ul className="list-disc pl-5 space-y-2">
-                                                {job.responsibilities.map((item, j) => (
-                                                <li key={j}>{item}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <div className="mt-3">
-                                            <p className="font-bold">Kualifikasi & Kemampuan:</p>
-                                            <ul className="list-disc pl-5 space-y-2">
-                                                {job.qualifications.map((item, j) => (
-                                                <li key={j}>{item}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <div className="mt-3">
-                                            <p className="font-bold">Keterampilan Tambahan (Nilai Plus):</p>
-                                            <ul className="list-disc pl-5 space-y-2">
-                                                {job.additionalSkills.map((item, j) => (
-                                                <li key={j}>{item}</li>
-                                                ))}
-                                            </ul>
+                                        <div className="max-h-[400px] overflow-auto py-5">
+                                          <div className="mt-3">
+                                                <p className="font-bold">Tanggung Jawab:</p>
+                                                <ul className="list-disc pl-5 space-y-2">
+                                                    {job.responsibilities.map((item, j) => (
+                                                    <li key={j}>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            <div className="mt-3">
+                                                <p className="font-bold">Tanggung Jawab:</p>
+                                                <ul className="list-disc pl-5 space-y-2">
+                                                    {job.responsibilities.map((item, j) => (
+                                                    <li key={j}>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            <div className="mt-3">
+                                                <p className="font-bold">Kualifikasi & Kemampuan:</p>
+                                                <ul className="list-disc pl-5 space-y-2">
+                                                    {job.qualifications.map((item, j) => (
+                                                    <li key={j}>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            <div className="mt-3">
+                                                <p className="font-bold">Keterampilan Tambahan (Nilai Plus):</p>
+                                                <ul className="list-disc pl-5 space-y-2">
+                                                    {job.additionalSkills.map((item, j) => (
+                                                    <li key={j}>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
                                         </div>
                                         <div className="w-full flex gap-5 py-3 px-3 mt-5">
                                             <a

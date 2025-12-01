@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Navbar from '@/components/ui/navbar';
 import Side from '@/components/ui/side';
+import Whatsapp from '@/components/ui/whatsapp';
 
 AOS.init({
   duration: 800,
@@ -12,7 +13,7 @@ AOS.init({
 export default function MainLayout({children}: {children: React.ReactNode}) {
     return (
         <>
-            <div className="flex min-h-screen flex-col items-center bg-white  text-[#1b1b18]  dark:bg-[#0a0a0a]">
+            <div className="flex min-h-screen flex-col items-center bg-white  text-[#1b1b18]  dark:bg-[#0a0a0a] relative">
                 <header className=" w-full relative">
                     <Navbar/>
                 </header>
@@ -20,7 +21,8 @@ export default function MainLayout({children}: {children: React.ReactNode}) {
                 <main className='flex-1 w-full mt-17'>
                     {children}
                 </main>
-                <Side/>
+                <Side />
+                <Whatsapp/>
                 <footer className="bg-[#2C3D6D] text-white p-4 text-center w-full">
                     Copyright © 2025. PT Harada Internasional Center
                 </footer>

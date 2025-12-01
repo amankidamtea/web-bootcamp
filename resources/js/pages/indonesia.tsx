@@ -19,11 +19,11 @@ AOS.init({
 
 
 
-export default function Jepang() {
+export default function Indonesia() {
     const [online, setOnline] = React.useState(false);
     return (
         <>
-            <Head title="Bootcamp Jepang">
+            <Head title="Bootcamp Indonesia">
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link
                     href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600"
@@ -36,10 +36,10 @@ export default function Jepang() {
                     {/* top */}
                 <div className='bg-white w-full h-[700px] shadow-xl  overflow-hidden lg:mb-4 relative mb-5'>
                         <img src="/images/foto2/bg.jpg" className='lg:w-full h-full object-cover' alt="" />
-                        <div className="flex bg-gradient-to-t from-black to-black/50 h-full absolute top-0 left-0 lg:flex-row flex-col gap-5 lg:px-32 lg:gap-0 items-center   w-full  pt-20">
+                        <div className="flex bg-gradient-to-t from-black to-black/50 h-full absolute top-0 left-0 lg:flex-row flex-col gap-5 lg:px-32 lg:gap-0 items-center  justify-around  w-full  pt-20">
                             <div className='lg:px-0 px-5 w-full'>
-                                <h1 className='lg:text-[60px] text-3xl w-full font-bold lg:leading-[70px] text-[#BAF81B]'>Upgrade karier kamu dengan <br/> pergi ke jepang bersama <br/> <span className='text-white'>Harada Internasional Center</span></h1>
-                            <p className='lg:text-[20px] mt-5 lg:w-[800px] w-full text-white'>Harada Internasional Center akan membawamu ke Jepang dengan mengajarkan segala kebutuhan yang harus dipenuhi yang salasatunya adalah belajar bahasa Jepang.</p>
+                                <h1 className='lg:text-[60px] text-3xl w-full font-bold lg:leading-[70px] text-[#BAF81B] capitalize'>Upgrade karier kamu dengan <br/> pergi ke indonesia bersama <br/> <span className='text-white'>Harada Internasional Center</span></h1>
+                            <p className='lg:text-[20px] mt-5 lg:w-[800px] w-full text-white'>Harada Internasional Center akan membawamu ke indonesia dengan mengajarkan segala kebutuhan yang harus dipenuhi yang salasatunya adalah belajar bahasa korea.</p>
                             <div className="py-5 flex gap-5 w-fit">
                                 <a href="https://wa.me/6287823529583?text=hai%20saya%20ingin%20konsultasi" className='bg-[#BAF81B] px-5 py-2 mt-5 rounded-full'>Konsultasi Gratis</a>
                                 {/* <a href="" className='bg-white px-5 py-2 mt-5 rounded-full'>Ambil Promo</a> */}
@@ -51,19 +51,17 @@ export default function Jepang() {
                     <div className="flex  justify-center w-full lg:py-10 py-5  bg-white lg:px-20 px-5">
                         <div className="w-full flex gap-5 lg:flex-row flex-col">
                             <div className="bg-[#2C3D6D] text-white h-fit p-5 rounded-xl flex flex-col items-center gap-2 w-full lg:w-[30%]">
-                                <a href="/jepang" className=' px-5 py-1 text-[#BAF81B] font-bold'>Jepang</a>
-                                <a href="/korea" className=' px-5 py-1'>Korea</a>
+                                <a href="/jepang" className=' px-5 py-1 '>Jepang</a>
+                                <a href="/korea" className=' px-5 py-1 '>Korea</a>
                                 <a href="/eropa" className=' px-5 py-1'>Eropa</a>
-                                <a href="/indonesia" className=' px-5 py-1'>Indonesia</a>
+                                <a href="/indonesia" className=' px-5 py-1 text-[#BAF81B] font-bold'>Indonesia</a>
                             </div>
                             <div className="bg-white w-full lg:w-[70%]">
-                            <h1 className='text-[30px] font-bold'>Tentang Bootcamp Bahasa Jepang</h1>
+                            <h1 className='text-[30px] font-bold'>Tentang Bootcamp Bahasa indonesia</h1>
                             <p className='mt-5'>
-                                Bootcamp Bahasa Jepang dari Harada Internasional Center adalah kursus online bersertifikat yang dirancang untuk membekalimu dengan kemampuan praktis dalam berbahasa Jepang. Di kelas Bahasa Jepang ini, kamu akan mempelajari berbagai topik penting, mulai dari keterampilan dasar percakapan, tata bahasa, kosakata, hingga persiapan ujian JLPT (Japanese Language Proficiency Test).
-
-                                Kamu juga akan mendapatkan pengalaman langsung melalui proyek dan latihan nyata yang relevan dengan penggunaan bahasa Jepang dalam kehidupan sehari-hari maupun dunia profesional, membangun portofolio bahasa bersama mentor ahli, dan mendapatkan persiapan karier yang optimal agar siap bersaing di dunia kerja atau pendidikan dengan kemampuan bahasa Jepang yang mumpuni.
+                                Ikuti bootcamp intensif belajar bahasa indonesia dan kuasai kemampuan komunikasi dengan cepat! Program ini cocok untuk pemula maupun yang ingin meningkatkan kemampuan bahasa indonesia, dengan metode belajar praktis, latihan interaktif, dan bimbingan dari instruktur berpengalaman. Peserta akan belajar mendengar, berbicara, membaca, dan menulis dalam bahasa indonesia, sekaligus memahami budaya dan kebiasaan sehari-hari di indonesia. Ideal bagi pelajar, profesional, atau siapa saja yang ingin menambah keterampilan bahasa dan membuka peluang baru.
                             </p>
-                            <h1 className='text-[30px] font-bold my-5'><span className='text-[#2C3D6D]'>Terjangkau Biayanya</span> Pergi Ke Jepang Pastinya</h1>
+                            <h1 className='text-[30px] font-bold my-5'><span className='text-[#2C3D6D]'>Terjangkau Biayanya</span> Kerja di indonesia Pastinya</h1>
                             <div className="py-5">
                                 <button onClick={()=>setOnline(true)} className={!online ? 'border border-[#2C3D6D] text-[#2C3D6D] px-5 py-1' : 'bg-[#2C3D6D] border border-[#2C3D6D] text-white px-5 py-1'}>Online</button>
                                 <button onClick={() => setOnline(false)} className={online ? 'border border-[#2C3D6D] text-[#2C3D6D] px-5 py-1' : 'bg-[#2C3D6D] border border-[#2C3D6D] text-white px-5 py-1'}>Offline</button>
@@ -89,7 +87,7 @@ export default function Jepang() {
                                     </a>
                                     </div>
                                     <ul className='capitalize mt-5 flex flex-col gap-3'>
-                                        <li className='flex items-center gap-2'><Check className='bg-gray-200 w-5 h-5 rounded-full p-1' size={15}/>pembelajaran  4 level selama 4 bulan</li>
+                                        <li className='flex items-center gap-2'><Check className='bg-gray-200 w-5 h-5 rounded-full p-1' size={15}/>pembelajaran  4 level selama 1 bulan</li>
                                         <li className='flex items-center gap-2'><Check className='bg-gray-200 w-5 h-5 rounded-full p-1' size={15}/>silabus, modul dan toolkit</li>
                                         <li className='flex items-center gap-2'><Check className='bg-gray-200 w-5 h-5 rounded-full p-1' size={15}/>matching job</li>
                                         <li className='flex items-center gap-2'><Check className='bg-gray-200 w-5 h-5 rounded-full p-1' size={15}/>pemantapan wawancara</li>
@@ -116,7 +114,7 @@ export default function Jepang() {
                                     </a>
                                     </div>
                                     <ul className='capitalize mt-5 flex flex-col gap-3'>
-                                        <li className='flex items-center gap-2'><Check className='bg-[#2C3D6D] text-white w-5 h-5 rounded-full p-1' size={15}/>pembelajaran  4 level selama 4 bulan</li>
+                                        <li className='flex items-center gap-2'><Check className='bg-[#2C3D6D] text-white w-5 h-5 rounded-full p-1' size={15}/>pembelajaran  4 level selama 1 bulan</li>
                                         <li className='flex items-center gap-2'><Check className='bg-[#2C3D6D] text-white w-5 h-5 rounded-full p-1' size={15}/>silabus, modul dan toolkit</li>
                                         <li className='flex items-center gap-2'><Check className='bg-[#2C3D6D] text-white w-5 h-5 rounded-full p-1' size={15}/>matching job</li>
                                         <li className='flex items-center gap-2'><Check className='bg-[#2C3D6D] text-white w-5 h-5 rounded-full p-1' size={15}/>pemantapan wawancara</li>
@@ -145,7 +143,7 @@ export default function Jepang() {
                                     </a>
                                     </div>
                                     <ul className='capitalize mt-5 flex flex-col gap-3'>
-                                        <li className='flex items-center gap-2'><Check className='bg-[#2C3D6D] text-white w-5 h-5 rounded-full p-1' size={15}/>pembelajaran  4 level selama 4 bulan</li>
+                                        <li className='flex items-center gap-2'><Check className='bg-[#2C3D6D] text-white w-5 h-5 rounded-full p-1' size={15}/>pembelajaran  4 level selama 1 bulan</li>
                                         <li className='flex items-center gap-2'><Check className='bg-[#2C3D6D] text-white w-5 h-5 rounded-full p-1' size={15}/>silabus, modul dan toolkit</li>
                                         <li className='flex items-center gap-2'><Check className='bg-[#2C3D6D] text-white w-5 h-5 rounded-full p-1' size={15}/>matching job</li>
                                         <li className='flex items-center gap-2'><Check className='bg-[#2C3D6D] text-white w-5 h-5 rounded-full p-1' size={15}/>pemantapan wawancara</li>
@@ -169,4 +167,4 @@ export default function Jepang() {
     );
 }
 
-Jepang.layout = (page: React.ReactNode) => <MainLayout>{page}</MainLayout>;
+Indonesia.layout = (page: React.ReactNode) => <MainLayout>{page}</MainLayout>;

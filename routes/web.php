@@ -46,6 +46,12 @@ Route::get('/indonesia', function () {
     ]);
 })->name('indonesia');
 
+Route::get('/all-class', function () {
+    return Inertia::render('allclass', [
+        'canRegister' => Features::enabled(Features::registration()),
+    ]);
+})->name('allclass');
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard');

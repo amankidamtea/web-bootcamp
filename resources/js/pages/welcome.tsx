@@ -153,53 +153,58 @@ const section2 = [
 const section3 = [
     {
         "title": "Eropa",
-        "link": "",
+        "link": "eropa",
         "image": "/images/foto2/inggris.jpg",
     },
     {
         "title": "Jepang",
-        "link": "",
-        "image": "/images/foto2/artboard2.jpg",
+        "link": "/jepang",
+        "image": "/images/foto2/Artboard2.jpg",
     },
     {
         "title": "Korea",
-        "link": "",
-        "image": "/images/foto2/artboard4.jpg",
+        "link": "/korea",
+        "image": "/images/foto2/Artboard4.jpg",
     },
     {
         "title": "Indonesia",
-        "link": "",
-        "image": "/images/foto2/artboard10.jpg",
+        "link": "/indonesia",
+        "image": "/images/foto2/Artboard10.jpg",
     },
 ]
 
 const section4 = [
     {
-        "name": "Safitri",
-        "deskripsi": "Seluruh program Bootcamp DIbimbing.id ini oke banget! Apalagi aku pertama kali nemu Bootcamp Full-Stack Web Development dengan harga yang paling terjangkau dengan materi paling lengkap!",
-        "image" : "/images/foto2/artboard1.jpg"
+        "name": "Windu",
+        "deskripsi": "Alhamdulillah sekarang hadir LPK Harada International Center. Saya sekarang sudah bekerja di Jepang dan sangat merekomendasikan. Materinya lengkap, senseinya sabar, dan penempatan kerjanya cepat. Saya sangat merekomendasikan HIC buat teman-teman yang ingin ke Jepang.",
+        "image" : "/images/foto2/Artboard8.jpg"
     },
     {
-        "name": "Safitri",
-        "deskripsi": "Seluruh program Bootcamp DIbimbing.id ini oke banget! Apalagi aku pertama kali nemu Bootcamp Full-Stack Web Development dengan harga yang paling terjangkau dengan materi paling lengkap!",
-        "image" : "/images/foto2/artboard1.jpg"
+        "name": "Abdul Halim",
+        "deskripsi": "Saya awalnya tidak bisa bahasa Jepang sama sekali dan belajar harus lintas kabupaten. Tapi sekarang sangat dekat dan di HIC belajarnya terstruktur dan intensif. Sekarang saya sudah bekerja di Jepang sebagai, sukses selalu HIC!",
+        "image" : "/images/foto2/halim.png"
     },
     {
-        "name": "Safitri",
-        "deskripsi": "Seluruh program Bootcamp DIbimbing.id ini oke banget! Apalagi aku pertama kali nemu Bootcamp Full-Stack Web Development dengan harga yang paling terjangkau dengan materi paling lengkap!",
-        "image" : "/images/foto2/artboard1.jpg"
+        "name": "Tasya",
+        "deskripsi": "Alhamdulilah saya sekarang sudah berada di jepang bahkan memiliki anak dan keluarga di Jepang. Saya sangat merekomendasikan LPK Harada International Center sebagai lembaga terbaik untuk ke Jepang.",
+        "image" : "/images/foto2/tasya.png"
     },
     {
-        "name": "Safitri",
-        "deskripsi": "Seluruh program Bootcamp DIbimbing.id ini oke banget! Apalagi aku pertama kali nemu Bootcamp Full-Stack Web Development dengan harga yang paling terjangkau dengan materi paling lengkap!",
-        "image" : "/images/foto2/artboard1.jpg"
+        "name": "Sriono",
+        "deskripsi": "Belajar di HARADA itu benar-benar terarah. Dari nol sampai bisa lulus ujian Korea. Bukan cuma bahasa, tapi juga mental dan etika kerja di Korea diajarkan. Saya rekomendasikan LPK HARADA untuk yang serius ingin kerja ke Korea.",
+        "image" : "/images/foto2/sriono.png"
+    },
+    {
+        "name": "Ahmad ginanjar",
+        "deskripsi": "Metode belajarnya mudah dipahami, banyak latihan soal EPS-TOPIK, dan selalu dibimbing sampai paham. Alhamdulillah sekarang saya sudah bekerja di Korea. Sukses Selalu LPK HARADA Internasional Center.",
+        "image" : "/images/foto2/anjar.png"
     },
 ]
 
 
 export default function Welcome() {
     return (
-        <>
+        <div className='w-full overflow-x-hidden'>
             <Head title="Berkarir Lebih Cepat dengan Harada Internasional Center">
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link
@@ -215,10 +220,10 @@ export default function Welcome() {
                         <div className="flex lg:flex-row flex-col gap-5 lg:px-32 lg:gap-0 items-center  justify-around  w-full  pt-10">
                             <div className='lg:px-0 px-5 w-full'>
                                 <h1 className='lg:text-[60px] text-3xl lg:w-[500px] font-bold lg:leading-[70px] text-[#2C3D6D]'><span className=''>Lembaga Bahasa No 1 di Indonesia</span> Tercepat Untuk Penempatan Kerja</h1>
-                                <p className='lg:text-[20px] lg:w-[500px] w-full'>Sebagai lembaga bahasa nomor satu di Indonesia, kami menyediakan pelatihan intensif dengan instruktur berpengalaman untuk hasil yang cepat dan efektif. Program kami dirancang untuk mempercepat penempatan kerja, sehingga lulusan siap bersaing di dunia profesional dalam waktu lebih singkat.</p>
-                                <button className='bg-[#2C3D6D] text-white px-10 rounded-full lg:text-[20px] text-[15px] py-1 mt-5'>Yuk Konsultasi</button>
+                                <p className='lg:text-[20px] lg:w-[500px] w-full mb-5'>Sebagai lembaga bahasa nomor satu di Indonesia, kami menyediakan pelatihan intensif dengan instruktur berpengalaman untuk hasil yang cepat dan efektif. Program kami dirancang untuk mempercepat penempatan kerja, sehingga lulusan siap bersaing di dunia profesional dalam waktu lebih singkat.</p>
+                                <a target="_blank" rel="noopener noreferrer" href='https://wa.me/6287823529583?text=hai%20saya%20ingin%20konsultasi' className='bg-[#2C3D6D] text-white px-10 rounded-full lg:text-[20px] text-[15px] py-2 mt-5'>Yuk Konsultasi</a>
                             </div>
-                            <div className='top-4   w-full px-5 lg:px-0 flex justify-center gap-3 overflow-hidden mt-6'>
+                            <div className='top-4   w-full px-10 lg:px-0 flex justify-center gap-3 overflow-hidden mt-6 overflow-x-hidden'>
                                 <SwiperComponent reverse={false} data={groupFoto1} direction='vertical' slidesPerView={2} spaceBetween={20} allowTouchMove={false}/>
                                 <SwiperComponent reverse={true} data={groupFoto2} direction='vertical' slidesPerView={2} spaceBetween={20} allowTouchMove={false}/>
                                 <SwiperComponent reverse={false} data={groupFoto3} direction='vertical' slidesPerView={2} spaceBetween={20} allowTouchMove={false} />
@@ -226,7 +231,7 @@ export default function Welcome() {
                         </div>
                     </div>
                     {/* info */}
-                    <div className="flex justify-center w-full lg:py-10 py-5  bg-[#2C3D6D]">
+                    <div className="flex justify-center w-full lg:py-10 py-5  bg-[#2C3D6D] overflow-x-hidden">
                         <div className="flex gap-10 justify-around text-white">
                             <div className="flex lg:flex-row flex-col gap-3 items-center">
                                 <h3 className='lg:text-[40px] text-xl font-bold text-[#BAF81B]'>1000+</h3>
@@ -243,7 +248,7 @@ export default function Welcome() {
                         </div>
                     </div>
                     {/* section 1 */}
-                    <div className='bg-[#2C3D6D] w-full h-fit  flex justify-center items-center relative'>
+                    <div className='bg-[#2C3D6D] w-full h-fit  flex justify-center items-center relative overflow-x-hidden'>
                         <div className="bg-white w-full h-full lg:rounded-t-[100px] sm:px-10 md:px-10 lg:px-20 xl:px-32 2xl:px-48">
                             <h2 data-aos="fade-up" className='text-center text-[#2C3D6D] lg:py-10 py-5 lg:text-[30px] text-xl font-bold'>Berbeda dari yang Lain, Bootcamp Kami Sangat Terpercaya!</h2>
 
@@ -264,11 +269,11 @@ export default function Welcome() {
                         </div>
                     </div>
                     {/* fartner */}
-                    <div className='bg-white w-full h-[400px] flex justify-center lg:py-10 py-5'>
+                    {/* <div className='bg-white w-full h-[400px] flex justify-center lg:py-10 py-5'>
                         <h2 data-aos="flip-up" className='lg:text-[30px] text-xl w-[700px] text-center font-bold'><span className='text-[#2C3D6D]'>Harada Internasional Center</span> telah bekerja sama dengan banyak Hiring Partners</h2>
-                    </div>
+                    </div> */}
                     {/* section 2 */}
-                    <div className='bg-white w-full lg:h-[500px] h-fit flex justify-center items-center overflow-hidden lg:relative pb-5'>
+                    <div className='bg-white overflow-x-hidden w-full lg:h-[500px] h-fit flex justify-center items-center overflow-hidden lg:relative pb-5'>
                         <img src="/images/foto2/bg1.png" className='lg:h-[600px] hidden lg:block' alt="" />
                         <div className="lg:absolute flex-col w-full flex justify-center items-center top0 right-0">
                             <h3 data-aos="zoom-in" className='lg:text-[30px] text-xl text-center font-bold text-[#2C3D6D]'> Mulai Belajar Skill Baru, dari Zero to Hero!</h3>
@@ -288,7 +293,7 @@ export default function Welcome() {
                         </div>
                     </div>
                     {/* section 3 */}
-                    <div className='bg-[#2C3D6D] w-full lg:h-[700px] py-5 flex justify-center items-center px-5'>
+                    <div className='bg-[#2C3D6D] w-full lg:h-[700px] py-5 flex justify-center items-center px-5 overflow-x-hidden'>
                         <div className="bg-[#BAF81B] lg:w-[70%] w-full h-fit lg:px-20 px-5 py-10 rounded-2xl relative">
                             <div className="flex lg:block  flex-col justify-center items-center">
                                 <h2 data-aos="zoom-in-up" className='lg:w-[70%] w-full font-bold lg:text-[30px] text-xl mb-5'>Dari Rekrutmen Sampai Pelatihan, Semua Ada di Corporate Service Harada Internasional Center</h2>
@@ -301,7 +306,7 @@ export default function Welcome() {
                         </div>
                     </div>
                     {/* section 4 */}
-                    <div className='bg-white w-full h-fit flex flex-col justify-center items-center py-20'>
+                    <div className='bg-white w-full h-fit flex flex-col justify-center items-center py-20 overflow-x-hidden'>
                         <h2 data-aos="flip-up" className='text-[30px] font-bold text-center'>Cerita Para Alumni <span className='text-[#2C3D6D]'>Harada Internasional Center</span></h2>
                         {/* card */}
                         
@@ -315,7 +320,7 @@ export default function Welcome() {
                                     >
                                     {section4.map((item, index) => (
                                         <SwiperSlide key={index}>
-                                        <div className=" bg-[#2C3D6D] lg:px-20 px-3 lg:w-[600px] 2xl:w-[800px] lg:h-[200px] h-[300px] rounded-2xl mt-5 flex lg:flex-row flex-col items-center gap-5 py-5">
+                                        <div className=" bg-[#2C3D6D] lg:px-20 px-3 lg:w-[600px]  lg:h-[200px] h-[300px] rounded-2xl mt-5 flex lg:flex-row flex-col items-center gap-5 py-5">
                                             <div className="p-1 rounded-full bg-white w-fit h-fit">
                                                 <div className="bg-white w-20 h-20 rounded-full flex justify-center items-center overflow-hidden">
                                                     <img src={item.image} className='w-20' alt="" />
@@ -337,21 +342,21 @@ export default function Welcome() {
                         
                     </div>
                     {/* section 5 */}
-                    <div className='bg-white w-full h-[500px] flex justify-center '>
-                        <h1 data-aos="zoom-in" className='text-[30px] font-bold text-center'>Penghargaan <br/> <span className='text-[#2C3D6D]'>Harada Internasional Center</span></h1>
-                    </div>
+                    {/* <div className='bg-white w-full h-[500px] flex justify-center '>
+                        <h1 data-aos="zoom-in" className='lg:text-[30px] text-xl font-bold text-center'>Penghargaan <br/> <span className='text-[#2C3D6D]'>Harada Internasional Center</span></h1>
+                    </div> */}
                     {/* section6 */}
                     <div  className='bg-[#BAF81B] w-full h-fit px-5 lg:py-0 lg:pt-10 py-5 flex justify-center items-center'>
                         <div data-aos="zoom-in-left" className="text-white bg-[#2C3D6D] p-10 rounded-2xl">
                             <h2 className='text-[30px] font-bold '>Konsultasikan Program <span className='text-[#BAF81B]'>Belajar Secara GRATIS!</span></h2>
-                            <p className='mb-6 w-[500px]'>Tanyakan sekarang, dapatkan jawabannya langsung dengan menghubungi Tim Admission kami. </p>
-                            <a href="" className='bg-[#BAF81B] text-[#2C3D6D] px-5 py-2 rounded-full'>Hubungi Kami</a>
+                            <p className='mb-6 lg:w-[500px] w-full'>Tanyakan sekarang, dapatkan jawabannya langsung dengan menghubungi Tim Admission kami. </p>
+                            <a target="_blank" rel="noopener noreferrer" href='https://wa.me/6287823529583?text=hai%20saya%20ingin%20konsultasi' className='bg-[#BAF81B] text-[#2C3D6D] px-5 py-2 rounded-full'>Hubungi Kami</a>
                         </div>
                         <img src="/images/foto2/telent2.png" className='w-96 lg:block hidden' alt="" />
                     </div>
                     
             </div>
-        </>
+        </div>
     );
 }
 

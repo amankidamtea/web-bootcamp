@@ -8,23 +8,23 @@ import React from 'react';
 const dataNav1 = [
     {
         title: 'Jepang',
-        link: '#',
-        desk: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
+        link: '/jepang',
+        desk: 'Program ini akan mempersiapkan kamu untuk pergi ke Jepang bersama Harada Internasional Center.'
     },
     {
         title: 'Korea',
-        link: '#',
-        desk: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
+        link: '/korea',
+        desk: 'Program ini akan mempersiapkan kamu untuk pergi ke Korea bersama Harada Internasional Center.'
     },
     {
         title: 'Eropa',
-        link: '#',
-        desk: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
+        link: '/eropa',
+        desk: 'Program ini akan mempersiapkan kamu untuk pergi ke Eropa bersama Harada Internasional Center.'
     },
     {
         title: 'Indonesia',
-        link: '#',
-        desk: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.'
+        link: '/indonesia',
+        desk: 'Program ini akan mempersiapkan kamu untuk siap kerja di tanah air kita Indonesia.'
     },
 ];
 export default function Navbar({
@@ -79,15 +79,17 @@ export default function Navbar({
                                 <div className="grid lg:grid-cols-3 gap-7">
                                     {dataNav1.map((item, index) => (
                                         <DropdownMenuItem key={index} className='hover:text-blue-300 font-bold cursor-pointer outline-none'>
-                                            <h2>{item.title}</h2>
-                                            <p className='font-light  max-w-[200px] mt-2 text-[12px] text-gray-500'>{item.desk}</p>
+                                            <a href={item.link}>
+                                                <h2>{item.title}</h2>
+                                                <p className='font-light  max-w-[200px] mt-2 text-[12px] text-gray-500'>{item.desk}</p>
+                                            </a>
                                         </DropdownMenuItem>
                                     ))}
                                 </div>
                             </DropdownMenuContent>
                         </DropdownMenu>
                     </li>
-                    <li>
+                    {/* <li>
                         <DropdownMenu>
                             <DropdownMenuTrigger   className=' outline-none flex items-center gap-1 cursor-pointer'>Corporate Service <ChevronDownIcon size={15}/></DropdownMenuTrigger>
                             <DropdownMenuContent  className='bg-white shadow p-5 lg:w-[700px] rounded-3xl mt-3'>
@@ -101,8 +103,8 @@ export default function Navbar({
                                 </div>
                             </DropdownMenuContent>
                         </DropdownMenu>
-                    </li>
-                    <li>
+                    </li> */}
+                    {/* <li>
                         <DropdownMenu>
                             <DropdownMenuTrigger   className=' outline-none flex items-center gap-1 cursor-pointer'>Community <ChevronDownIcon size={15}/></DropdownMenuTrigger>
                             <DropdownMenuContent  className='bg-white shadow p-5 lg:w-[700px] rounded-3xl mt-3'>
@@ -116,6 +118,9 @@ export default function Navbar({
                                 </div>
                             </DropdownMenuContent>
                         </DropdownMenu>
+                    </li> */}
+                    <li>
+                        <a href="/about">Tentang Kami</a>
                     </li>
                     <li>
                         <a href="/job-portal">Job Portal</a>
@@ -152,13 +157,15 @@ export default function Navbar({
 
             {/* mobile only */}
             {!open && (
-                <div className={`bg-white w-full h-20 lg:hidden flex   items-center justify-between fixed top-0 left-0 z-50 px-5 shadow`}>
-                    <a href="/">
-                        <img src={'/images/harada.png'} className='w-32' />
-                    </a>
-                    <button type='button' onClick={()=>setOpen(true)}>
-                        <MenuIcon size={25} />
-                    </button>
+                <div className="bg-white w-full py-3 lg:hidden fixed top-0 left-0 z-50 shadow">
+                    <div className={`flex  items-center justify-between px-5`}>
+                        <a href="/">
+                            <img src={'/images/harada.png'} className='w-32' />
+                        </a>
+                        <button type='button' onClick={()=>setOpen(true)}>
+                            <MenuIcon size={25} />
+                        </button>
+                    </div>
                 </div>
             )}
         </div>

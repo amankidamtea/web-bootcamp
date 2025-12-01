@@ -5,19 +5,32 @@ export default function Side() {
                 <img src="/images/logowhite.png" className='w-28' alt="" />
                 <h2 className='font-bold my-5'>PT. Harada Internasional Center</h2>
                 <p className='leading-[26px] text-center lg:text-start'>
-                    Plaza CityView <br/>Jl. Kemang Timur No.1, RT.14/RW.8, Pejaten Barat,<br/> Ps. Minggu, Kota Jakarta Selatan, <br/>Daerah Khusus Ibukota Jakarta 12510
+                    Kp. Langensari RT/ RW 005/005 <br/> Ds. Sukanagara Kec. Sukanagara Kab. Cianjur
                 </p>
+                <div className="w-full justify-center mb-2">
+                    <div className="flex gap-6  items-center justify-center py-1  ">
+                        <a href="https://www.tiktok.com/@haradaforeveryone?is_from_webapp=1&sender_device=pc">
+                            <img src={'/images/icon/ttw.png'} className='w-5' alt="" />
+                        </a>
+                        <a href="https://www.instagram.com/haradainternasionalcenter/">
+                            <img src={'/images/icon/igw.png'} className='w-5' alt="" />
+                        </a>
+                        <a href="https://www.youtube.com/@haradainternasionalcenter">
+                            <img src={'/images/icon/ytw.png'} className='w-5' alt="" />
+                        </a>
+                    </div>
+                </div>
             </div>
             <div className="">
                 <h2 className='font-bold mb-5 text-[#BAF81B]'>Layanan Karier </h2>
                 <div className="flex flex-col gap-5">
-                    <a href=''>
+                    <a href='#'>
                     Video Course Online
                     </a>
-                    <a href=''>
+                    <a href='/all-class'>
                         Bootcamp
                     </a>
-                    <a href=''>
+                    <a href='#'>
                         Webinar Gratis
                     </a>
                 </div>
@@ -25,13 +38,13 @@ export default function Side() {
             <div className="">
                 <h2 className='font-bold mb-5 text-[#BAF81B]'>Pages</h2>
                 <div className="flex flex-col gap-5">
-                    <a href=''>
+                    <a href='/'>
                         Beranda
                     </a>
                     <a href='/about'>
                         Tentang Kami
                     </a>
-                    <a href=''>
+                    {/* <a href=''>
                         Mentor
                     </a>
                     <a href=''>
@@ -39,8 +52,8 @@ export default function Side() {
                     </a>
                     <a href=''>
                         Afiliasi
-                    </a>
-                    <a href=''>
+                    </a> */}
+                    <a href='/job-portal'>
                         Job Portal
                     </a>
                     <a href=''>

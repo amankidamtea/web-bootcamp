@@ -21,7 +21,7 @@ export default function SwiperComponent({ reverse, data, direction, slidesPerVie
           spaceBetween={spaceBetween}
           loop={true}
           autoplay={{  delay: 0, disableOnInteraction: true, reverseDirection: reverse }}
-          className='w-[200px] lg:h-[600px] h-[320px] overflow-hidden'
+          className='w-[200px] lg:h-[600px] h-[270px] overflow-hidden'
           speed={5000}
           direction={direction}
           allowTouchMove={allowTouchMove}
